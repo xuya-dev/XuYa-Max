@@ -13,9 +13,9 @@
 ### 期望执行方式
 
 - 先看 `src/api/system/post/*` 和 `src/views/system/post/index.vue` 是否已存在。
-- 再看 `src/views/system/notice/index.vue` 的标准 useTable + ArtTable + ArtSearchBar 骨架。
+- 再看 `src/views/system/notice/index.vue` 的标准 useTable + XuyaTable + XuyaSearchBar 骨架。
 - 生成或修改 `api/index.ts`、`types.ts`、`views/.../index.vue`、`modules/post-search.vue`、`modules/post-dialog.vue`。
-- 用 `useTable`、`useDict`、`ArtTable`、`ArtTableHeader`、`ArtSearchBar`、`ArtButtonTable`、`ArtDictTag`、`v-auth`。
+- 用 `useTable`、`useDict`、`XuyaTable`、`XuyaTableHeader`、`XuyaSearchBar`、`XuyaButtonTable`、`XuyaDictTag`、`v-auth`。
 
 ## 案例 2：增加详情查看功能（富文本）
 
@@ -32,7 +32,7 @@
 ### 期望执行方式
 
 - 看 `src/views/system/notice/index.vue` 现有结构。
-- 操作列加 `h(ArtButtonTable, { type: 'view', onClick: () => handleDetail(row) })`。
+- 操作列加 `h(XuyaButtonTable, { type: 'view', onClick: () => handleDetail(row) })`。
 - 新增 `detail` reactive 状态 + `openDetail(id)` 方法 + `ElDialog` 详情弹窗。
 - 正文 v-html 必须包 `sanitizeHtml`（`@/utils/sanitize`）。
 - 富文本里 OSS 私有图用 `resolveOssContent`（`@/utils/ossContent`）解析。
@@ -52,7 +52,7 @@
 
 - 判断这是「已有复杂页面增强」，不是重新生成 CRUD。
 - 优先阅读 `src/views/system/user/index.vue` 完整实现。
-- 保留 `ArtTreePanel`（部门树）、`ArtExcelImport`（导入）、`ArtTableHeader`（列显隐）、`v-auth` 权限、`ArtDictTag` 字典。
+- 保留 `XuyaTreePanel`（部门树）、`XuyaExcelImport`（导入）、`XuyaTableHeader`（列显隐）、`v-auth` 权限、`XuyaDictTag` 字典。
 - 只增量修改搜索栏（`modules/user-search.vue`）和查询参数处理（日期范围）。
 
 ## 案例 4：修复搜索栏字段名错误
@@ -106,7 +106,7 @@
 ```text
 使用 $frontend-crud-coding 在 XuYa-Max-frontend 中新增 /system/client 列表页：
 1. 参考 src/views/system/notice/index.vue 的 useTable 模式
-2. 包含搜索栏（ArtSearchBar）、表格（ArtTable）、新增/编辑弹窗（ArtDialog）
+2. 包含搜索栏（XuyaSearchBar）、表格（XuyaTable）、新增/编辑弹窗（XuyaDialog）
 3. API 路径沿用后端 /system/client/*
 4. 权限用 v-auth="'system:client:add'" 等
 5. 状态字段用字典 sys_normal_disable

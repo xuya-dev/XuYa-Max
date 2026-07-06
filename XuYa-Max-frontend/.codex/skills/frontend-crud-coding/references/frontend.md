@@ -53,12 +53,12 @@
 ## Vue 页面结构规则
 
 - 页面用 `<script setup lang="ts">` + `defineOptions({ name: 'Xxx' })`。
-- 标准列表页根节点：`class="xxx-page art-full-height flex flex-col overflow-hidden"`。
+- 标准列表页根节点：`class="xxx-page xuya-full-height flex flex-col overflow-hidden"`。
 - 标准结构：
-  搜索栏（`ArtSearchBar` 或内联 `ElForm`）
-  表格卡片 `ElCard.art-table-card`
-  `ArtTableHeader`（列显隐 + 刷新 + 左侧按钮槽）
-  `ArtTable`（数据 + 分页 + 选择）
+  搜索栏（`XuyaSearchBar` 或内联 `ElForm`）
+  表格卡片 `ElCard.xuya-table-card`
+  `XuyaTableHeader`（列显隐 + 刷新 + 左侧按钮槽）
+  `XuyaTable`（数据 + 分页 + 选择）
   新增/编辑 `ElDialog`（外置 modules 子组件或内联）
 - 列表数据统一通过 `useTable` 管理（不要手写 `ref([])` + 裸 `ElTable`）。
 
@@ -77,7 +77,7 @@ const { columns, columnChecks, data, loading, pagination, getData,
 })
 ```
 
-- 列用 `formatter: (row) => h(Component, props)` 渲染自定义内容（字典用 `ArtDictTag`，操作按钮用 `ArtButtonTable`）。
+- 列用 `formatter: (row) => h(Component, props)` 渲染自定义内容（字典用 `XuyaDictTag`，操作按钮用 `XuyaButtonTable`）。
 - 搜索：`handleSearch(p) => { replaceSearchParams(p); getData() }`。
 - 刷新策略：`refreshData`（全量）、`refreshCreate`（新增后回第一页）、`refreshUpdate`（更新后保持页）、`refreshRemove`（删除后智能处理空页）。
 - `useTable` 的分页字段默认 `pageNum/pageSize`（已通过全局 `tableConfig` 对接后端 PageQuery）。
@@ -93,24 +93,24 @@ const { columns, columnChecks, data, loading, pagination, getData,
   ```
 - `handleSubmit` 调 `formRef.value.validate()`，按主键判断 add/update，成功后关闭 + emit success。
 - `handleClose` 调 `resetFields()` + 重置 defaultForm（**富文本 form-item 没 prop，resetFields 清不掉，要手动重置**）。
-- 富文本用 `ArtWangEditor`，用 `contentRef = computed({ get, set })` 代理 string 类型。
+- 富文本用 `XuyaWangEditor`，用 `contentRef = computed({ get, set })` 代理 string 类型。
 
 ## 组件与样式规则
 
 - 优先复用公共组件（`src/components/core/`）：
-  - tables：`ArtTable`、`ArtTableHeader`
-  - forms：`ArtSearchBar`、`ArtButtonTable`、`ArtButtonMore`、`ArtForm`、`ArtWangEditor`、`ArtUserSelect`、`ArtRoleSelect`、`ArtExcelImport`、`ArtExcelExport`、`ArtDragVerify`
-  - others：`ArtDictTag`、`ArtTreePanel`、`ArtFileUpload`、`ArtIconSelect`、`ArtMenuRight`
-  - media：`ArtImageUpload`、`ArtImagePreview`、`ArtVideoPlayer`、`ArtCutterImg`
-  - base：`ArtSvgIcon`、`ArtLogo`、`ArtBackToTop`
-- `ArtButtonTable` 的 type：`'add' | 'edit' | 'delete' | 'view' | 'more'`。
-- 组件命名：目录 `art-xxx`，组件内 `defineOptions({ name: 'ArtXxx' })`。
+  - tables：`XuyaTable`、`XuyaTableHeader`
+  - forms：`XuyaSearchBar`、`XuyaButtonTable`、`XuyaButtonMore`、`XuyaForm`、`XuyaWangEditor`、`XuyaUserSelect`、`XuyaRoleSelect`、`XuyaExcelImport`、`XuyaExcelExport`、`XuyaDragVerify`
+  - others：`XuyaDictTag`、`XuyaTreePanel`、`XuyaFileUpload`、`XuyaIconSelect`、`XuyaMenuRight`
+  - media：`XuyaImageUpload`、`XuyaImagePreview`、`XuyaVideoPlayer`、`XuyaCutterImg`
+  - base：`XuyaSvgIcon`、`XuyaLogo`、`XuyaBackToTop`
+- `XuyaButtonTable` 的 type：`'add' | 'edit' | 'delete' | 'view' | 'more'`。
+- 组件命名：目录 `xuya-xxx`，组件内 `defineOptions({ name: 'XuyaXxx' })`。
 - Tailwind 语义色：`bg-theme/text-theme/success/error/warning/info/g-100..g-900`。
-- 自定义类：`flex-c`（居中横排）、`flex-b`（两端对齐）、`flex-cc`（居中横纵）、`flex-cb`（两端+纵居中）、`c-p`（cursor pointer）、`art-full-height`、`art-table-card`。
+- 自定义类：`flex-c`（居中横排）、`flex-b`（两端对齐）、`flex-cc`（居中横纵）、`flex-cb`（两端+纵居中）、`c-p`（cursor pointer）、`xuya-full-height`、`xuya-table-card`。
 
 ## 字典、权限与公共工具
 
-- 字典：`const { sys_xxx } = useDict('sys_xxx')`，渲染用 `ArtDictTag`。
+- 字典：`const { sys_xxx } = useDict('sys_xxx')`，渲染用 `XuyaDictTag`。
 - 权限指令：`v-auth="'xxx:add'"`（`v-hasPermi` 是别名，等价；无权限时直接移除 DOM）。
 - 角色指令：`v-roles="['admin']"`。
 - 工具：
