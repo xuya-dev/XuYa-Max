@@ -1,0 +1,4 @@
+dev.xuya.common.web.config.CaptchaConfig
+dev.xuya.common.web.config.FilterConfig
+dev.xuya.common.web.config.I18nConfig
+dev.xuya.common.web.config.ResourcesConfig

@@ -1,0 +1,14 @@
+allowBuilds:
+  '@parcel/watcher': true
+  core-js: true
+  es5-ext: true
+  esbuild: true
+  vue-demi: true
+# pnpm 构建脚本许可配置（pnpm v10+ 默认拦截依赖的 postinstall，需显式批准）
+# esbuild / vue-demi / @parcel/watcher 等的构建脚本为 Vite 运行所必需，必须允许
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - core-js
+  - es5-ext
+  - esbuild
+  - vue-demi
