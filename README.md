@@ -135,7 +135,18 @@ server {
 - **`.claude/agents/`** — Claude Code 子 agent（CRUD 页面专家、API 类型专家、页面增强专家、总入口）
 - **`.codex/skills/`** — Codex 开发技能（SKILL.md + references，含真实代码约定和使用案例）
 
-规范覆盖了 `useTable + ArtTable + ArtSearchBar` 三件套模式、`request()` 自动解包约定、字典/权限/富文本安全渲染、SSE 消息联动等核心开发模式。
+规范覆盖了 `useTable + XuyaTable + XuyaSearchBar` 三件套模式、`request()` 自动解包约定、字典/权限/富文本安全渲染、SSE 消息联动等核心开发模式。
+
+### 参考页面（demo-templates 分支）
+
+`demo-templates` 分支归档了原模板的完整演示页面（组件展示、表单示例、图表、水印等），开发时可拉取参考：
+
+```bash
+git checkout demo-templates -- src/views/widgets/watermark/index.vue  # 拉取单个页面
+git diff --name-only main..demo-templates | grep views/               # 查看可用页面
+```
+
+参考完后用 `git checkout HEAD -- <file>` 撤销，不要把演示页提交到 main。
 
 ## 技术栈
 
