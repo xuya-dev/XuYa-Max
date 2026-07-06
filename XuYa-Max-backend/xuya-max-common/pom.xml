@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>XuYa-Max-backend</artifactId>
+        <groupId>dev.xuya</groupId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>xuya-max-common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        common 通用模块
+    </description>
+
+    <modules>
+        <module>xuya-max-common-bom</module>
+        <module>xuya-max-common-core</module>
+        <module>xuya-max-common-doc</module>
+        <module>xuya-max-common-excel</module>
+        <module>xuya-max-common-job</module>
+        <module>xuya-max-common-log</module>
+        <module>xuya-max-common-mail</module>
+        <module>xuya-max-common-mybatis</module>
+        <module>xuya-max-common-oss</module>
+        <module>xuya-max-common-redis</module>
+        <module>xuya-max-common-satoken</module>
+        <module>xuya-max-common-security</module>
+        <module>xuya-max-common-sms</module>
+        <module>xuya-max-common-web</module>
+        <module>xuya-max-common-translation</module>
+        <module>xuya-max-common-sensitive</module>
+        <module>xuya-max-common-json</module>
+        <module>xuya-max-common-encrypt</module>
+        <module>xuya-max-common-push</module>
+    </modules>
+
+</project>

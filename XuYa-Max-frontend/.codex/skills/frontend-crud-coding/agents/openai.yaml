@@ -1,0 +1,7 @@
+interface:
+  display_name: "前端编码"
+  short_description: "按 XuYa-Max-frontend 真实代码和 useTable + Art* 组件风格编写前端 CRUD"
+  default_prompt: "使用 $frontend-crud-coding 先读取适用 reference，再按当前 XuYa-Max-frontend 真实页面、hooks、API/types 约定和 Art* 组件实现前端修改。"
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,6 @@
+dev.xuya.common.translation.config.TranslationConfig
+dev.xuya.common.translation.core.impl.DeptNameTranslationImpl
+dev.xuya.common.translation.core.impl.DictTypeTranslationImpl
+dev.xuya.common.translation.core.impl.OssUrlTranslationImpl
+dev.xuya.common.translation.core.impl.UserNameTranslationImpl
+dev.xuya.common.translation.core.impl.NicknameTranslationImpl

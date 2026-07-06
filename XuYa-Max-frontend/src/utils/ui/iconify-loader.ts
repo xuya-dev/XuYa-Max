@@ -1,0 +1,24 @@
+/**
+ * 离线图标加载器
+ *
+ * 用于在内网环境下支持 Iconify 图标的离线加载。
+ * 通过预加载图标集数据，避免运行时从 CDN 获取图标。
+ *
+ * 使用方式：
+ * 1. 安装所需图标集：pnpm add -D @iconify-json/[icon-set-name]
+ * 2. 在此文件中导入并注册图标集
+ * 3. 在组件中使用：<ArtSvgIcon icon="ri:home-line" />
+ *
+ * @module utils/ui/iconify
+ * @author XuYa-Max Team
+ */
+
+import { addCollection } from '@iconify/vue'
+
+// 系统必要图标库（Remix Icon，项目菜单/按钮主要使用）
+import riIcons from '@iconify-json/ri/icons.json'
+
+/** 注册全部离线图标集 */
+export function setupIconifyOffline(): void {
+  addCollection(riIcons as any)
+}

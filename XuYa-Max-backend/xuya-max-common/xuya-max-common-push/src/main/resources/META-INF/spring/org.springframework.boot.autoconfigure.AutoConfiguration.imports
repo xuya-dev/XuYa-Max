@@ -1,0 +1,3 @@
+dev.xuya.common.push.config.MessageAutoConfiguration
+dev.xuya.common.push.config.MessageSseConfiguration
+dev.xuya.common.push.config.MessageWebSocketConfiguration

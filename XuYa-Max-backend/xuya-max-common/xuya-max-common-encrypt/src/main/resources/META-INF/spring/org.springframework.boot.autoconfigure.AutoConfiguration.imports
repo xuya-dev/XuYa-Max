@@ -1,0 +1,3 @@
+dev.xuya.common.encrypt.config.EncryptorAutoConfiguration
+dev.xuya.common.encrypt.config.ApiDecryptAutoConfiguration
+
